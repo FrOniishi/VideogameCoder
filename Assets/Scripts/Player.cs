@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player: MonoBehaviour
+public class Player : MonoBehaviour
 {
     //References
     public Animator Ani;
@@ -18,20 +18,25 @@ public class Player: MonoBehaviour
     public static float playerLife = 100f;
     float turnSmoothVelocity;
 
+    void Start()
+    {
+        playerLife = 100;
+    }
+
     private void FixedUpdate()
     {
         Move();
     }
 
-    void Move ()
-    {   
+    void Move()
+    {
 
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
 
         Vector3 inputPlayer = new Vector3(hor, 0, ver).normalized;
 
-        if(inputPlayer.magnitude >= 0.1f)
+        if (inputPlayer.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(inputPlayer.x, inputPlayer.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -59,22 +64,23 @@ public class Player: MonoBehaviour
 
     }
 
-    private void Idle ()
+    private void Idle()
     {
         Ani.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
     }
 
-    private void Walk ()
+    private void Walk()
     {
         speed = wSpeed;
         Ani.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
 
     }
 
-    private void Run ()
+    private void Run()
     {
         speed = rSpeed;
         Ani.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
     }
 
+    
 }

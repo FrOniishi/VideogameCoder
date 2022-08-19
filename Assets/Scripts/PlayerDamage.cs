@@ -71,6 +71,11 @@ public class PlayerDamage : MonoBehaviour
                 loseActive = true;
             }
         }
+
+        if(coll.CompareTag("Boss"))
+        {
+            coll.GetComponent<Boss>().HPMin -= playerDamage;
+        }
     }
 
 }

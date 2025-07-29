@@ -1,4 +1,4 @@
-# VideogameCoder
+# Primer Proyecto - First Breath -
 
 Historia: El protagonista "Arthur" es un famoso mercenario que se centra en completar contratos donde su objetivo es eliminar criaturas que vagan por la tierra y amenazan con destruir a la humanidad. Como en cualquier otro día Arthur toma un contrato que lo lleva a una mazmorra infestada de criaturas, en donde su objetivo será eliminar al lider de dichas criaturas.
 
